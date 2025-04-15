@@ -1,40 +1,190 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🌦️ Atmosfera - Modern Weather Dashboard
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-15.3.0-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0.0-blueviolet?logo=tailwind-css)](https://tailwindcss.com/)
+[![Turbopack](https://img.shields.io/badge/Turbopack-beta-blue?logo=turborepo)](https://turbo.build/pack)
 
-First, run the development server:
+A modern weather forecasting platform with beautiful visualizations and real-time updates, built with Next.js 15 and cutting-edge web technologies.
 
+![Dashboard Preview](/public/preview.png)
+
+## ✨ Key Features
+
+- 🌓 **Adaptive Theme System**
+  - Automatic dark/light mode based on system preference
+  - Smooth theme transitions
+  - Customizable color palettes
+
+- 📊 **Data Visualization**
+  - Interactive temperature charts
+  - Hourly weather timeline
+  - 7-day forecast overview
+  - Atmospheric pressure graphs
+
+- 🎨 **Modern UI Components**
+  - Glassmorphism effects
+  - Responsive grid layouts
+  - Animated transitions
+  - Custom scrollbars
+
+- ⚡ **Performance Optimized**
+  - Turbopack-powered development
+  - Lazy-loaded components
+  - Efficient state management
+  - Client-side rendering for dynamic content
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js v18.18.0 or higher
+- npm v9.8.1 or higher
+- Git
+
+### Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/<your-username>/atmosfera.git
+cd atmosfera
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. **Environment Setup**
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Buat file `.env.local` di root project:
+```env
+NEXT_PUBLIC_WEATHER_API_KEY=your_api_key_here
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Development
+```bash
+npm run dev
+```
+Buka [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Production Build
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🛠 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Core Technologies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- **Framework:** Next.js 15 + Turbopack  
+- **Styling:** Tailwind CSS v4 + PostCSS  
+- **Animations:** Framer Motion  
+- **Charting:** Chart.js 4 + react-chartjs-2  
+- **State Management:** Zustand  
+- **Icons:** Lucide React  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Key Dependencies
 
-## Deploy on Vercel
+- `dayjs` – Date manipulation  
+- `@tailwindcss/nesting` – CSS nesting support  
+- `postcss-preset-env` – Modern CSS features  
+- `geist` – Font system  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📂 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+```
+src/
+├─ components/
+│  ├─ Weather/       # Cuaca components
+│  ├─ Layout/        # Layout components
+│  ├─ UI/            # UI components
+├─ pages/            # Next.js pages
+├─ store/            # Zustand stores
+├─ styles/           # Global CSS
+├─ utils/            # Helper functions
+public/
+├─ screenshots/      # App screenshots
+```
+
+## 🎨 Tailwind/PostCSS Configuration
+
+Custom konfigurasi untuk Tailwind CSS v4:
+
+```js
+// postcss.config.mjs
+import tailwindcss from '@tailwindcss/postcss';
+import autoprefixer from 'autoprefixer';
+import postcssNesting from '@tailwindcss/nesting';
+
+export default {
+  plugins: [
+    postcssNesting(),
+    tailwindcss({
+      config: {
+        content: ['./src/**/*.{js,ts,jsx,tsx}'],
+        theme: {
+          extend: {
+            colors: {
+              background: 'rgb(var(--color-background))',
+              foreground: 'rgb(var(--color-foreground))'
+            }
+          }
+        }
+      }
+    }),
+    autoprefixer
+  ]
+}
+```
+
+## 🤝 Contributing
+
+### Fork Project
+
+1. **Setup Development Environment**
+```bash
+git clone your-fork-url
+cd atmosfera
+npm install
+```
+
+2. **Buat Branch Fitur**
+```bash
+git checkout -b feature/your-feature
+```
+
+3. **Commit Perubahan**
+
+Gunakan convention:
+- `feat:` Untuk fitur baru
+- `fix:` Untuk perbaikan bug
+- `docs:` Untuk perubahan dokumentasi
+
+```bash
+git commit -m "feat: add hourly forecast component"
+```
+
+4. **Push ke Repository**
+```bash
+git push origin feature/your-feature
+```
+
+5. **Buka Pull Request**
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 🌐 Live Demo
+
+[View Live Demo](https://your-live-demo-url.com)
+
+> Catatan: Ganti dengan URL live Anda
+
+---
+
+🛠 Built with ❤️ by **[Your Name]**  
+📧 Contact: [your.email@example.com]  
+🔗 Portfolio: [https://your-portfolio.com](https://your-portfolio.com)
