@@ -105,8 +105,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 [View Live Demo](https://atmosfera-delta.vercel.app/)
 
-> Catatan: Ganti dengan URL live Anda
-
 ---
 
 🛠 Built with ❤️ by **[Ervareza Naurian (ShiroX Dev)]**  
