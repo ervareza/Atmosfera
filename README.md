@@ -108,5 +108,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 🛠 Built with ❤️ by **[Ervareza Naurian (ShiroX Dev)]**  
-📧 Contact: [rianskp644@gmail.com]  
+📧 Contact: [rianskp644@gmail.com](mailto:rianskp644@gmail.com)
 🔗 Portfolio: [https://ervareza.github.io/](https://ervareza.github.io/)
